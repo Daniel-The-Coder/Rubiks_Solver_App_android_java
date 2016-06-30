@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="utf-8"?>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    package="com.hfad.rubikssolver">
+
+    <application
+        android:allowBackup="true"
+        android:icon="@mipmap/ic_launcher"
+        android:label="@string/app_name"
+        android:supportsRtl="true"
+        android:theme="@style/AppTheme">
+        <activity
+            android:name=".MainActivity"
+            android:label="@string/app_name"
+            android:theme="@style/AppTheme.NoActionBar">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
+        <activity
+            android:name=".TopActivity"
+            android:label="@string/title_activity_top"
+            android:theme="@style/AppTheme.NoActionBar" />
+        <activity android:name=".Solver" />
+        <activity
+            android:name=".FrontActivity"
+            android:label="@string/title_activity_front"
+            android:theme="@style/AppTheme.NoActionBar" />
+        <activity
+            android:name=".LeftActivity"
+            android:label="@string/title_activity_left"
+            android:theme="@style/AppTheme.NoActionBar" />
+        <activity
+            android:name=".RightActivity"
+            android:label="@string/title_activity_right"
+            android:theme="@style/AppTheme.NoActionBar" />
+        <activity
+            android:name=".BottomActivity"
+            android:label="@string/title_activity_bottom"
+            android:theme="@style/AppTheme.NoActionBar" />
+        <activity android:name=".BackActivity" />
+        <activity
+            android:name=".FinalView"
+            android:label="@string/title_activity_final_view"
+            android:theme="@style/AppTheme.NoActionBar"></activity>
+    </application>
+
+</manifest>
