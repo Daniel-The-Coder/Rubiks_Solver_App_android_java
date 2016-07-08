@@ -16,7 +16,7 @@ import java.util.HashMap;
 public class TopActivity extends AppCompatActivity {
 
     HashMap<Integer, Integer> flags = new HashMap();
-    HashMap<String, char[][]> cube;
+    //HashMap<String, char[][]> cube;
     ArrayList<Button> buttons = new ArrayList<>();
 
     @Override
@@ -27,8 +27,8 @@ public class TopActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_top);
 
-        Intent intent = getIntent();
-        this.cube = (HashMap<String, char[][]>)intent.getSerializableExtra("cube");
+        //Intent intent = getIntent();
+        //(HashMap<String, char[][]>)intent.getSerializableExtra("cube");
 
         buttons.add((Button) findViewById(R.id.button));
         buttons.add((Button) findViewById(R.id.button2));
@@ -40,7 +40,7 @@ public class TopActivity extends AppCompatActivity {
         buttons.add((Button) findViewById(R.id.button8));
         buttons.add((Button) findViewById(R.id.button9));
 
-        char[][] thisFace = this.cube.get("top");
+        char[][] thisFace = Storage.cube.get("top");
         for (int i=0;i<3;i++){
             for (int j=0;j<3;j++){
                 int buttonIndex = i*3 + j;
@@ -70,7 +70,7 @@ public class TopActivity extends AppCompatActivity {
     }
 
     public void changeColorTop(int i, int j, Button btn) {
-        char[][] thisFace = this.cube.get("top");
+        char[][] thisFace = Storage.cube.get("top");
         if (flags.get(10*i+j)==1){
             btn.setBackgroundColor(Color.WHITE);
             flags.put(10*i+j,2);
@@ -101,7 +101,7 @@ public class TopActivity extends AppCompatActivity {
             flags.put(10 * i + j, 1);
             thisFace[i-1][j-1]='G';
         }
-        this.cube.put("top",thisFace);
+        Storage.cube.put("top",thisFace);
     }
 
     public void changeColorTop11(View view){
@@ -152,31 +152,31 @@ public class TopActivity extends AppCompatActivity {
 
     public void topGoFront(View view){
         Intent intent = new Intent(this, FrontActivity.class);
-        intent.putExtra("cube",this.cube);
+        //intent.putExtra("cube",this.cube);
         startActivity(intent);
     }
 
     public void topGoLeft(View view){
         Intent intent = new Intent(this, LeftActivity.class);
-        intent.putExtra("cube",this.cube);
+        //intent.putExtra("cube",this.cube);
         startActivity(intent);
     }
 
     public void topGoRight(View view){
         Intent intent = new Intent(this, RightActivity.class);
-        intent.putExtra("cube",this.cube);
+        //intent.putExtra("cube",this.cube);
         startActivity(intent);
     }
 
     public void topGoBottom(View view){
         Intent intent = new Intent(this, BottomActivity.class);
-        intent.putExtra("cube",this.cube);
+        //intent.putExtra("cube",this.cube);
         startActivity(intent);
     }
 
     public void topGoBack(View view){
         Intent intent = new Intent(this, BackActivity.class);
-        intent.putExtra("cube",this.cube);
+        //intent.putExtra("cube",this.cube);
         startActivity(intent);
     }
 
@@ -187,7 +187,7 @@ public class TopActivity extends AppCompatActivity {
 
     public void view(View view){
         Intent intent = new Intent(this, FinalView.class);
-        intent.putExtra("cube",this.cube);
+        //intent.putExtra("cube",this.cube);
         startActivity(intent);
     }
 }

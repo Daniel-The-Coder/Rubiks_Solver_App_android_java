@@ -15,17 +15,17 @@ import java.util.HashMap;
 
 public class MainActivity extends AppCompatActivity {
 
-    HashMap<String,char[][]> cube;
+    //HashMap<String,char[][]> cube;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
-        this.cube=new HashMap<>();
-        cube.put("top", new char[3][3]);
-        cube.put("front", new char[3][3]);
-        cube.put("left", new char[3][3]);
-        cube.put("right", new char[3][3]);
-        cube.put("bottom", new char[3][3]);
-        cube.put("back", new char[3][3]);
+        Storage.cube=new HashMap<>();
+        Storage.cube.put("top", new char[3][3]);
+        Storage.cube.put("front", new char[3][3]);
+        Storage.cube.put("left", new char[3][3]);
+        Storage.cube.put("right", new char[3][3]);
+        Storage.cube.put("bottom", new char[3][3]);
+        Storage.cube.put("back", new char[3][3]);
 
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
@@ -37,7 +37,7 @@ public class MainActivity extends AppCompatActivity {
 
     public void onStart(View view){
         Intent intent = new Intent(this, TopActivity.class);
-        intent.putExtra("cube", this.cube);
+        //intent.putExtra("cube", Storage.cube);
         startActivity(intent);
     }
 }

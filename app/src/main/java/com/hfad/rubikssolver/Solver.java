@@ -14,7 +14,7 @@ import java.util.NoSuchElementException;
 
 public class Solver extends AppCompatActivity {
 
-    public HashMap<String, char[][]> cube = new HashMap<>();
+    //public HashMap<String, char[][]> cube = new HashMap<>();
     private CubeConfig cubeConfig;
     private CubeConfig solution;
     private ArrayList<String> moves;
@@ -26,8 +26,8 @@ public class Solver extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_solver);
 
-        Intent intent = getIntent();
-        this.cube = (HashMap<String, char[][]>)intent.getSerializableExtra("cube");
+        //Intent intent = getIntent();
+        //this.cube = (HashMap<String, char[][]>)intent.getSerializableExtra("cube");
 
         this.backtracker = new Backtracker();
     }
@@ -42,7 +42,7 @@ public class Solver extends AppCompatActivity {
         double start = System.currentTimeMillis(); // start the clock
         String time;
         try {
-            this.cubeConfig = new CubeConfig(this.cube);
+            this.cubeConfig = new CubeConfig(Storage.cube);
             //System.out.println(this.cubeConfig);
             this.solution = (CubeConfig) this.backtracker.solve(cubeConfig);
             this.moves = solution.getMoves();

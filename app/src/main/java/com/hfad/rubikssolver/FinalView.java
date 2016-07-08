@@ -16,7 +16,7 @@ import java.util.HashMap;
 
 public class FinalView extends AppCompatActivity {
 
-    HashMap<String, char[][]> cube = new HashMap<>();
+    //HashMap<String, char[][]> cube = new HashMap<>();
     HashMap<String, ArrayList<Button>> buttonsMap = new HashMap<>();
 
     @Override
@@ -63,11 +63,11 @@ public class FinalView extends AppCompatActivity {
         buttonsMap.put("back", back);
 
         Intent intent = getIntent();
-        this.cube = (HashMap<String, char[][]>)intent.getSerializableExtra("cube");
+        //this.cube = (HashMap<String, char[][]>)intent.getSerializableExtra("cube");
 
         //read hashmap and color grid
-        for (String key:this.cube.keySet()){
-            char[][] thisFace = this.cube.get(key);
+        for (String key:Storage.cube.keySet()){
+            char[][] thisFace = Storage.cube.get(key);
             for (int i=0;i<3;i++){
                 for (int j=0;j<3;j++){
                     int buttonIndex = i*3 + j;
@@ -101,44 +101,44 @@ public class FinalView extends AppCompatActivity {
 
     public void finalGoTop(View view){
         Intent intent = new Intent(this, TopActivity.class);
-        intent.putExtra("cube", this.cube);
+        //intent.putExtra("cube", this.cube);
         startActivity(intent);
     }
 
     public void finalGoFront(View view){
         Intent intent = new Intent(this, FrontActivity.class);
-        intent.putExtra("cube",this.cube);
+        //intent.putExtra("cube",this.cube);
         startActivity(intent);
     }
 
     public void finalGoLeft(View view){
         Intent intent = new Intent(this, LeftActivity.class);
-        intent.putExtra("cube",this.cube);
+        //intent.putExtra("cube",this.cube);
         startActivity(intent);
     }
 
     public void finalGoRight(View view){
         Intent intent = new Intent(this, RightActivity.class);
-        intent.putExtra("cube",this.cube);
+        //intent.putExtra("cube",this.cube);
         startActivity(intent);
     }
 
     public void finalGoBottom(View view){
         Intent intent = new Intent(this, BottomActivity.class);
-        intent.putExtra("cube",this.cube);
+        //intent.putExtra("cube",this.cube);
         startActivity(intent);
     }
 
     public void finalGoBack(View view){
         Intent intent = new Intent(this, BackActivity.class);
-        intent.putExtra("cube", this.cube);
+        //intent.putExtra("cube", this.cube);
         startActivity(intent);
     }
 
     public void solve(View view){
         boolean flag = true;
-        for (String key:this.cube.keySet()){
-            char[][] face = this.cube.get(key);
+        for (String key:Storage.cube.keySet()){
+            char[][] face = Storage.cube.get(key);
             for (int i=0;i<3;i++){
                 for (int j=0;j<3;j++){
                     if (face[i][j]=='W' || face[i][j]=='Y' || face[i][j]=='O' || face[i][j]=='R' || face[i][j]=='B' || face[i][j]=='G' ){
@@ -160,7 +160,7 @@ public class FinalView extends AppCompatActivity {
 
         if (flag) { //all cells of cube filled
             Intent intent = new Intent(this, Solver.class);
-            intent.putExtra("cube",this.cube);
+            //intent.putExtra("cube",this.cube);
             startActivity(intent);
         }
         else{

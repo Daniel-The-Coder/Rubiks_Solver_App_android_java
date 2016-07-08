@@ -16,7 +16,7 @@ import java.util.HashMap;
 public class FrontActivity extends AppCompatActivity {
 
     HashMap<Integer, Integer> flags = new HashMap();
-    HashMap<String, char[][]> cube;
+    //HashMap<String, char[][]> cube;
     ArrayList<Button> buttons= new ArrayList<>();
 
     @Override
@@ -24,8 +24,8 @@ public class FrontActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_front);
 
-        Intent intent = getIntent();
-        this.cube = (HashMap<String, char[][]>)intent.getSerializableExtra("cube");
+        //Intent intent = getIntent();
+        //this.cube = (HashMap<String, char[][]>)intent.getSerializableExtra("cube");
 
         flags.put(11,1);flags.put(12, 1);flags.put(13, 1);
         flags.put(21,1);flags.put(22, 1);flags.put(23, 1);
@@ -41,7 +41,7 @@ public class FrontActivity extends AppCompatActivity {
         buttons.add((Button) findViewById(R.id.button8));
         buttons.add((Button) findViewById(R.id.button9));
 
-        char[][] thisFace = this.cube.get("front");
+        char[][] thisFace = Storage.cube.get("front");
         for (int i=0;i<3;i++){
             for (int j=0;j<3;j++){
                 int buttonIndex = i*3 + j;
@@ -72,7 +72,7 @@ public class FrontActivity extends AppCompatActivity {
     }
 
     public void changeColorFront(int i, int j, Button btn) {
-        char[][] thisFace = this.cube.get("front");
+        char[][] thisFace = Storage.cube.get("front");
         if (flags.get(10*i+j)==1){
             btn.setBackgroundColor(Color.WHITE);
             flags.put(10*i+j,2);
@@ -103,7 +103,7 @@ public class FrontActivity extends AppCompatActivity {
             flags.put(10 * i + j, 1);
             thisFace[i-1][j-1]='G';
         }
-        this.cube.put("front",thisFace);
+        Storage.cube.put("front",thisFace);
     }
 
     public void changeColorFront11(View view){
@@ -154,31 +154,31 @@ public class FrontActivity extends AppCompatActivity {
 
     public void frontGoTop(View view){
         Intent intent = new Intent(this, TopActivity.class);
-        intent.putExtra("cube",this.cube);
+        //intent.putExtra("cube",this.cube);
         startActivity(intent);
     }
 
     public void frontGoLeft(View view){
         Intent intent = new Intent(this, LeftActivity.class);
-        intent.putExtra("cube",this.cube);
+        //intent.putExtra("cube",this.cube);
         startActivity(intent);
     }
 
     public void frontGoRight(View view){
         Intent intent = new Intent(this, RightActivity.class);
-        intent.putExtra("cube",this.cube);
+        //intent.putExtra("cube",this.cube);
         startActivity(intent);
     }
 
     public void frontGoBottom(View view){
         Intent intent = new Intent(this, BottomActivity.class);
-        intent.putExtra("cube",this.cube);
+        //intent.putExtra("cube",this.cube);
         startActivity(intent);
     }
 
     public void frontGoBack(View view){
         Intent intent = new Intent(this, BackActivity.class);
-        intent.putExtra("cube",this.cube);
+        //intent.putExtra("cube",this.cube);
         startActivity(intent);
     }
 
@@ -189,7 +189,7 @@ public class FrontActivity extends AppCompatActivity {
 
     public void view(View view){
         Intent intent = new Intent(this, FinalView.class);
-        intent.putExtra("cube",this.cube);
+        //intent.putExtra("cube",this.cube);
         startActivity(intent);
     }
 }
