@@ -51,7 +51,7 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:textAppearance="?android:attr/textAppearanceLarge"
-            android:text=""
+            android:text="The solve may take a few minutes. Please be patient. \n\nClick 'SOLVE' if you haven't done so yet."
             android:textSize="20dp"
             android:id="@+id/textView"
             android:layout_centerHorizontal="true"

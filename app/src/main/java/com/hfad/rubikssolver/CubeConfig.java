@@ -344,7 +344,7 @@ public class CubeConfig implements Configuration{
      * invalid if the last 3 moves are same or nullify each other
      */
     public boolean isValid(){
-        if (this.depth == 8){//to prevent the program from trying more than 7 moves
+        if (this.depth == 7){//to prevent the program from trying more than 6 moves
             return false;
         }
         int L = moves.size();

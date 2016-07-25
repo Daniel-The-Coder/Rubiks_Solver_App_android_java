@@ -71,7 +71,7 @@ public class Solver extends AppCompatActivity {
         } catch (NoSuchElementException e) {
             time=("Elapsed time: " +
                     (System.currentTimeMillis() - start)/1000.0 + " seconds");
-            txt.setText(time+"\n\nOperation terminated, it's taking too long..");
+            txt.setText(time+"\n\nOperation terminated, it's taking too long.");
             CharSequence text2 = "Ran out of time, can't solve this cube.";
             Toast toast2=Toast.makeText(this, text2, Toast.LENGTH_LONG);
             toast2.show();
