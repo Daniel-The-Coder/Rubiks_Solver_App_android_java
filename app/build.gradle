@@ -8,8 +8,8 @@ android {
         applicationId "com.hfad.rubikssolver"
         minSdkVersion 15
         targetSdkVersion 23
-        versionCode 4
-        versionName "3.01"
+        versionCode 6
+        versionName "3.03"
     }
     buildTypes {
         release {
